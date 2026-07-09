@@ -3,6 +3,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const chatRoutes = require('./src/routes/chatRoutes');
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(express.json());
+app.use('/api/chat', chatRoutes);
 
 const PORT = process.env.PORT || 5000;
 
