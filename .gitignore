@@ -1,3 +1,23 @@
-# Environment files
+# dependencies
+node_modules/
+
+# env
 .env
 *.env
+
+# logs
+logs
+*.log
+
+# uploads
+uploads/
+
+# build
+dist/
+
+# vscode
+.vscode/
+
+# mac/windows
+.DS_Store
+Thumbs.db
