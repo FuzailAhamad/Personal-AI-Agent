@@ -3,15 +3,22 @@ import { useState } from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import ChatArea from "../Chat/ChatArea";
+import useChat from "../../hooks/useChat";
 
 function Layout() {
 
-  // Global Chat State
+  // Temporary (will migrate later)
   const [messages, setMessages] = useState([]);
 
-  const [chats, setChats] = useState([]);
+  // Chat Hook
+  const {
+    chats,
+    setChats,
+    currentChatId,
+    setCurrentChatId,
+    createChat,
+  } = useChat();
 
-  const [currentChatId, setCurrentChatId] = useState(null);
   return (
     <div className="flex h-screen overflow-hidden">
 
@@ -30,6 +37,7 @@ function Layout() {
           setChats={setChats}
           currentChatId={currentChatId}
           setCurrentChatId={setCurrentChatId}
+          createChat={createChat}
         />
 
       </div>
