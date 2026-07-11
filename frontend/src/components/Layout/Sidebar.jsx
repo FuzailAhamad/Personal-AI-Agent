@@ -1,7 +1,9 @@
-import {Bot, Plus, MessageSquare, Settings,} from "lucide-react";
+import { Bot, Plus, MessageSquare, Settings, } from "lucide-react";
 import chatHistory from "../../data/chatHistory";
 
-function Sidebar() {
+function Sidebar({
+  setMessages,
+}) {
   return (
     <div className="w-64 h-screen bg-zinc-900 text-white flex flex-col">
 
@@ -15,8 +17,10 @@ function Sidebar() {
 
       {/* New Chat Button */}
       <div className="p-4">
-        <button className="w-full flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 transition rounded-lg py-3 cursor-pointer">
-
+        <button
+          onClick={() => setMessages([])}
+          className="w-full flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 transition rounded-lg py-3 cursor-pointer"
+        >
           <Plus size={20} />
 
           <span>New Chat</span>
